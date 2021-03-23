@@ -1,0 +1,19 @@
+.header-page{
+  background-color: rgb(9, 11, 19);
+}
+
+.nav-link{
+  padding: 16px 18px !important;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+svg{
+  vertical-align: bottom;
+}
+
+.svg-color{
+  fill: rgb(249, 249, 249);
+}
+
