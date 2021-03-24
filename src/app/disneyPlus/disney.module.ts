@@ -8,7 +8,22 @@ import { SearchComponent } from './pages/search/search.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import { SeriesComponent } from './pages/series/series.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { BannerComponent } from './pages/home/components/banner/banner.component';
 
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+
+import SwiperCore, { Navigation, Pagination, Scrollbar } from 'swiper/core';
+
+// Install modules
+SwiperCore.use([Navigation, Pagination, Scrollbar]);
+
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto'
+};
 
 @NgModule({
   declarations: [
@@ -16,7 +31,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     SearchComponent,
     MoviesComponent,
     SeriesComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    BannerComponent
   ],
   exports: [
     HomeComponent,
@@ -26,7 +42,14 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     NotFoundComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SwiperModule
+  ],
+  providers: [
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
   ]
 })
 export class DisneyModule { }

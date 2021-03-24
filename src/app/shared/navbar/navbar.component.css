@@ -9,11 +9,14 @@
   font-size: 13px;
 }
 
-svg{
-  vertical-align: bottom;
+.nav-link:hover{
+  cursor: pointer;
 }
 
-.svg-color{
-  fill: rgb(249, 249, 249);
+svg{
+  vertical-align: bottom;
+  width: 20px !important;
+  height: 20px !important;
 }
+
 
