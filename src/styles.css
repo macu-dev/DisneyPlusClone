@@ -14,3 +14,34 @@ html{
 .svg-color{
   fill: rgb(249, 249, 249);
 }
+
+
+@import '~swiper/swiper-bundle';
+
+.swiper-container {
+  /* width: 90%; */
+  max-height: 50vh;
+}
+
+/* .s-wrapper.swiper.swiper-container.swiper-container-initialized.swiper-container-horizontal.swiper-container-pointer-events{
+  height: 25vh !important;
+} */
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}

@@ -15,7 +15,8 @@ export class BannerComponent {
     slidesPerView: 1,
     spaceBetween: 30,
     autoplay: {
-      delay: 6000,
+      delay: 5000,
+      disableOnInteraction: false,
     },
     loop: true,
     // effect:'fade',
@@ -24,7 +25,7 @@ export class BannerComponent {
     },
     pagination: {
       el: '.swiper-pagination',
-      clickable: true,
+      clickable: false,
     },
     navigation: {
       nextEl: '.swiper-button-next',

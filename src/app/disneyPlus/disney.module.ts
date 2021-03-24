@@ -8,7 +8,8 @@ import { SearchComponent } from './pages/search/search.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import { SeriesComponent } from './pages/series/series.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { BannerComponent } from './pages/home/components/banner/banner.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { RecommendedComponent } from './components/recommended/recommended.component';
 
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
@@ -28,6 +29,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 @NgModule({
   declarations: [
     HomeComponent,
+    BannerComponent,
+    RecommendedComponent,
     SearchComponent,
     MoviesComponent,
     SeriesComponent,
@@ -36,6 +39,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   ],
   exports: [
     HomeComponent,
+    BannerComponent,
+    RecommendedComponent,
     SearchComponent,
     MoviesComponent,
     SeriesComponent,
