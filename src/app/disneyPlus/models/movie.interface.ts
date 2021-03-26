@@ -1,6 +1,6 @@
-export interface result {
+export interface Movies {
   page:          number;
-  movies:       Movie[];
+  results:       Movie[];
   total_pages:   number;
   total_results: number;
 }

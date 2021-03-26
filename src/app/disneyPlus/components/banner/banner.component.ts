@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { Movies, Movie } from '../../models/movie.interface';
+import { DisneyService } from '../../services/disney.service';
 
 
 @Component({
@@ -9,7 +11,8 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
   styleUrls: ['./banner.component.css']
 })
 
-export class BannerComponent {
+export class BannerComponent implements OnInit {
+  movies: Movie[] = [];
 
   config: SwiperConfigInterface = {
     slidesPerView: 1,
@@ -33,7 +36,22 @@ export class BannerComponent {
     }
   };
 
-  constructor() { }
+
+  constructor(private disneyService: DisneyService){}
+
+  ngOnInit(): void{
+    this.getDiscoverMovies();
+  }
+
+  getDiscoverMovies(): void {
+    this.disneyService.getDiscoverMovies()
+    .subscribe( ({results}) => {
+      this.movies = results;
+      console.log(this.movies);
+    });
+  }
 
 
 }
+
+
