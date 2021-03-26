@@ -1,13 +1,7 @@
 
-<swiper [config]="config" style="height: 25vh;">
-  <div>
-    <img src="./assets/images/banner-1.jpg" alt="">
-  </div>
-  <div>
-    <img src="./assets/images/banner-2.jpg" alt="">
-  </div>
-  <div>
-    <img src="./assets/images/banner-3.jpg" alt="">
+<swiper [config]="config">
+  <div *ngFor="let movie of movies">
+    <img src="https://image.tmdb.org/t/p/original{{movie.backdrop_path}}" [alt]="movie.original_title">
   </div>
 </swiper>
 

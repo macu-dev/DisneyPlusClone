@@ -37,8 +37,7 @@ html{
 
 
 .swiper-container {
-  /* width: 90%; */
-  max-height: 50vh;
+  max-height: 85vh;
 }
 
 /* .s-wrapper.swiper.swiper-container.swiper-container-initialized.swiper-container-horizontal.swiper-container-pointer-events{

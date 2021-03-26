@@ -17,18 +17,19 @@ export class BannerComponent implements OnInit {
   config: SwiperConfigInterface = {
     slidesPerView: 1,
     spaceBetween: 30,
+    centeredSlides: true,
     autoplay: {
-      delay: 5000,
+      delay: 8000,
       disableOnInteraction: false,
     },
-    loop: true,
-    // effect:'fade',
+    // loop: true,
+    // effect: 'fade',
     fadeEffect: {
       crossFade: true
     },
     pagination: {
       el: '.swiper-pagination',
-      clickable: false,
+      clickable: true
     },
     navigation: {
       nextEl: '.swiper-button-next',
