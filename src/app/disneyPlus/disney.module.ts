@@ -16,6 +16,7 @@ import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 import SwiperCore, { Navigation, Pagination, Scrollbar } from 'swiper/core';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 // Install modules
 SwiperCore.use([Navigation, Pagination, Scrollbar]);
@@ -48,7 +49,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   ],
   imports: [
     CommonModule,
-    SwiperModule
+    SwiperModule,
+    SlickCarouselModule
   ],
   providers: [
     {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+
 
 @Component({
   selector: 'app-recommended',
@@ -7,20 +7,22 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
   styleUrls: ['./recommended.component.css']
 })
 export class RecommendedComponent implements OnInit {
-  config: SwiperConfigInterface = {
-    slidesPerView: 5,
-    spaceBetween: 20,
-    slidesPerGroup: 4,
-    loop: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-  };
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
+  // tslint:disable-next-line: member-ordering
+  slideConfig = {
+    'slidesToShow': 4,
+    'slidesToScroll': 4,
+    "nextArrow": "<div class='nav-btn next-slide'><img src='assets/images/right-arrow.png'></div>",
+    "prevArrow": "<div class='nav-btn prev-slide'><img src='assets/images/left-arrow.png'></div>",
+    infinite: true,
+
+  };
+
 
 }

@@ -4,7 +4,7 @@
     <!-- <div  [ngStyle]="{background: 'url(https://image.tmdb.org/t/p/original'+ movie.backdrop_path + ')', width: '100%', height: '80vh'}" -->
       <img  data-src="https://image.tmdb.org/t/p/original{{movie.backdrop_path}}" data-srcset="https://image.tmdb.org/t/p/original{{movie.backdrop_path}}" class="swiper-lazy image-preview d-flex">
     <!-- <img data-src="https://image.tmdb.org/t/p/original{{movie.backdrop_path}}" [alt]="movie.title" class=" swiper-lazy image-preview"> -->
-    <header class="w-75 d-flex flex-wrap align-content-center pr-5 pl-5">
+    <header class="w-100 d-flex flex-wrap align-content-center container">
       <h1 class="title-movie text-white w-75 text-left">{{movie.title}}</h1>
       <p class="text-white text-left w-50 description-movie">{{cutDescripcionMovies(movie.overview)}}</p>
       <div class="contianer w-100 d-flex">
