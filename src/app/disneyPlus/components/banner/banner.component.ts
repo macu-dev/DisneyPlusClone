@@ -19,21 +19,17 @@ export class BannerComponent implements OnInit {
     spaceBetween: 30,
     centeredSlides: true,
     autoplay: {
-      delay: 8000,
+      delay: 9000,
       disableOnInteraction: false,
     },
     // loop: true,
     // effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },
+    // fadeEffect: {
+    //   crossFade: true
+    // },
     pagination: {
       el: '.swiper-pagination',
       clickable: true
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
     }
   };
 
@@ -50,6 +46,13 @@ export class BannerComponent implements OnInit {
       this.movies = results;
       console.log(this.movies);
     });
+  }
+
+  cutDescripcionMovies(text: string): string {
+    if (text.length > 229 ) {
+      text = `${text.slice(0, 229)} ...`;
+    }
+    return text;
   }
 
 
