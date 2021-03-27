@@ -19,18 +19,26 @@ export class BannerComponent implements OnInit {
     spaceBetween: 30,
     centeredSlides: true,
     autoplay: {
-      delay: 9000,
+      delay: 8000,
       disableOnInteraction: false,
     },
     // loop: true,
     // effect: 'fade',
-    // fadeEffect: {
-    //   crossFade: true
-    // },
+    fadeEffect: {
+      crossFade: true
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true
+    },
+
+    lazy: {
+      loadPrevNext: true,
+      checkInView: true,
+      loadOnTransitionStart: true
+      // Enable lazy loading
     }
+
   };
 
 
@@ -49,9 +57,10 @@ export class BannerComponent implements OnInit {
   }
 
   cutDescripcionMovies(text: string): string {
-    if (text.length > 229 ) {
-      text = `${text.slice(0, 229)} ...`;
+    if (text.length > 230) {
+      text = `${text.slice(0, 230)}...`;
     }
+
     return text;
   }
 
