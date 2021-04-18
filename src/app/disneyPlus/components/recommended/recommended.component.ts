@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from '../../models/movie.interface';
+import { DisneyService } from '../../services/disney.service';
 
 
 @Component({
@@ -8,11 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecommendedComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  recommended: Movie[] = [];
 
   // tslint:disable-next-line: member-ordering
   slideConfig = {
@@ -23,6 +21,23 @@ export class RecommendedComponent implements OnInit {
     infinite: true,
 
   };
+  constructor(private disneyService: DisneyService){}
+
+  ngOnInit(): void {
+    this.getRecommendedMovie();
+  }
+
+  getRecommendedMovie(): void {
+    this.disneyService.getRecommendedMovie()
+    // tslint:disable-next-line: deprecation
+    .subscribe(({results}) => {
+      this.recommended = results;
+      // console.log(results);
+    });
+
+  }
+
+
 
 
 }

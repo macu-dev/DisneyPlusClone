@@ -90,6 +90,7 @@ html{
   margin: auto 0;
   top: 0;
   bottom: 0;
+  cursor: pointer;
 }
 
 .next-slide {
@@ -106,6 +107,7 @@ html{
   margin: auto 0;
   top: 0;
   bottom: 0;
+  cursor: pointer;
 }
 
 .slick-slide {

@@ -17,4 +17,14 @@ export class DisneyService {
     const url = `${this.apiUrl}/discover/movie?${this.apiKey}`;
     return this.http.get<Movies>(url);
   }
+
+  getRecommendedMovie(): Observable<Movies>{
+    const url = `${this.apiUrl}/movie/top_rated?${this.apiKey}`;
+    return this.http.get<Movies>(url);
+  }
+
+  getNewMovies(): Observable<Movies> {
+    const url = `${this.apiUrl}/movie/upcoming?${this.apiKey}`;
+    return this.http.get<Movies>(url);
+  }
 }

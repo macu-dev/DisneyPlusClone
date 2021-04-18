@@ -50,6 +50,7 @@ export class BannerComponent implements OnInit {
 
   getDiscoverMovies(): void {
     this.disneyService.getDiscoverMovies()
+    // tslint:disable-next-line: deprecation
     .subscribe( ({results}) => {
       this.movies = results;
       console.log(this.movies);
@@ -63,7 +64,6 @@ export class BannerComponent implements OnInit {
 
     return text;
   }
-
 
 }
 
