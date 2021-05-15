@@ -8,7 +8,7 @@
       <h1 class="title-movie text-white w-75 text-left">{{movie.title}}</h1>
       <p class="text-white text-left w-50 description-movie">{{cutDescripcionMovies(movie.overview)}}</p>
       <div class="contianer w-100 d-flex">
-        <button type="button" class="btn btn-primary">More details</button>
+        <a class="btn btn-primary"[routerLink]="['movie', movie.id]">More details</a>
       </div>
     </header>
   </div>

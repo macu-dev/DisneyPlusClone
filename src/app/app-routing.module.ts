@@ -5,6 +5,7 @@ import { MoviesComponent } from './disneyPlus/pages/movies/movies.component';
 import { NotFoundComponent } from './disneyPlus/pages/not-found/not-found.component';
 import { SearchComponent } from './disneyPlus/pages/search/search.component';
 import { SeriesComponent } from './disneyPlus/pages/series/series.component';
+import { ShowMoviesComponent } from './disneyPlus/pages/show-movies/show-movies.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'series',
     component: SeriesComponent
+  },
+  {
+    path: 'movie/:id',
+    component: ShowMoviesComponent
   },
   {
     path: '**',
