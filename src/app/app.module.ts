@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { DisneyModule } from './disneyPlus/disney.module';
 import { SharedModule } from './shared/shared.module';
+import { ShowMoviesComponent } from './pages/show-movies/show-movies.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShowMoviesComponent
   ],
   imports: [
     BrowserModule,
