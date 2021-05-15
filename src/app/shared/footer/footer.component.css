@@ -1,0 +1,18 @@
+footer {
+  background-color: #000;
+  padding: 50px;
+  min-height: 250px;
+}
+.footer-content {
+  color: hsla(0,0%,75.3%,.8);
+  font-size: 11px;
+}
+
+.footer-content_element--padding {
+  padding: 8px 12px;
+}
+
+.footer-content_element--center {
+  text-align: center;
+}
+
