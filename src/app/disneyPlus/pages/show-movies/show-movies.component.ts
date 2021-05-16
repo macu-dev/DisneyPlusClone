@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap, tap } from 'rxjs/operators';
-import { Movies } from '../../models/movie.interface';
+import { Movie } from '../../models/movie.interface';
 import { DisneyService } from '../../services/disney.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { DisneyService } from '../../services/disney.service';
 })
 export class ShowMoviesComponent implements OnInit {
 
-  movie!: Movies;
+  movie!: Movie;
 
   constructor(private actividatedRoute: ActivatedRoute, private movieService: DisneyService) { }
 

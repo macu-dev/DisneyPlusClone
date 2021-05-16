@@ -15,7 +15,6 @@ html{
 
 .main-page{
   background-color: rgb(26, 29, 41);
-  padding-top: 100px;
   min-height: 100vh !important;
 }
 
@@ -37,7 +36,7 @@ html{
 
 
 .swiper-container {
-  max-height: 85vh;
+  max-height: 100vh;
 }
 
 /* .s-wrapper.swiper.swiper-container.swiper-container-initialized.swiper-container-horizontal.swiper-container-pointer-events{
