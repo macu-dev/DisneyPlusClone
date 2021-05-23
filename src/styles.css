@@ -16,6 +16,7 @@ html{
 .main-page{
   background-color: rgb(26, 29, 41);
   min-height: 100vh !important;
+  padding-top: 70px;
 }
 
 

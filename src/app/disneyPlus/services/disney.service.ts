@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Movie, Movies } from '../models/movie.interface';
+import { Movies, TrailerInfo } from '../models/movie.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +32,10 @@ export class DisneyService {
   getMovieId(id: string): Observable<Movies> {
     const url = `${this.apiUrl}/movie/${id}?${this.apiKey}`;
     return this.http.get<Movies>(url);
+  }
+
+  getMovieTrailer(id: string): Observable<TrailerInfo> {
+    const url = `${this.apiUrl}/movie/${id}/videos?${this.apiKey}`;
+    return this.http.get<TrailerInfo>(url);
   }
 }
