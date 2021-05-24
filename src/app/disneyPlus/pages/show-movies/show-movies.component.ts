@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { mergeAll, switchMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { Movie, TrailerInfo } from '../../models/movie.interface';
+import { Movie, Trailer, TrailerInfo } from '../../models/movie.interface';
 import { DisneyService } from '../../services/disney.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { DisneyService } from '../../services/disney.service';
 export class ShowMoviesComponent implements OnInit {
 
   movie!: Movie;
-  trailer!: TrailerInfo;
+  trailer!: Trailer;
 
   constructor(private actividatedRoute: ActivatedRoute, private movieService: DisneyService) { }
 
@@ -35,6 +35,11 @@ export class ShowMoviesComponent implements OnInit {
     )  // el tap recibe el producto de este observable y el tap imprime en consola el resultado
     .subscribe(trailer => this.trailer = trailer);
 
+  }
+
+  createURL(key: string): string {
+    const url = `https://www.youtube.com/embed/${key}`;
+    return url;
   }
 
 }

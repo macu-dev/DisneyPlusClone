@@ -10,6 +10,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { RecommendedComponent } from './components/recommended/recommended.component';
 import { NewDisneyComponent } from './components/new-disney/new-disney.component';
+import { SafeurlPipe } from './safeurl.pipe';
 
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
@@ -37,7 +38,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SeriesComponent,
     NotFoundComponent,
     BannerComponent,
-    NewDisneyComponent
+    NewDisneyComponent,
+    SafeurlPipe
   ],
   exports: [
     HomeComponent,
@@ -47,7 +49,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MoviesComponent,
     SeriesComponent,
     NotFoundComponent,
-    NewDisneyComponent
+    NewDisneyComponent,
+    SafeurlPipe
   ],
   imports: [
     CommonModule,

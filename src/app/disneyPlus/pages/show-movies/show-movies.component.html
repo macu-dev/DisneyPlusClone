@@ -1,5 +1,9 @@
-<div *ngIf="!movie;else divMovie" class="alert alert-info">
-  Espere por favor
+<div *ngIf="!movie || !trailer;else divMovie" class="p-0 w-100 h-100">
+  <div class="w-100 h-100 d-flex align-items-center">
+     <div class="preload p-0 w-100 d-flex justify-content-center align-items-center">
+       <img src="assets/images/logo.svg" alt="logo de disney" width="200">
+    </div>
+  </div>
 </div>
 
 <ng-template #divMovie>
@@ -23,7 +27,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  ...
+                  <iframe width="100%" height="315" [src]="createURL(trailer.results[0].key) | safeurl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
