@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { mergeAll, switchMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { Movie, Trailer, TrailerInfo } from '../../models/movie.interface';
+import { Movie, Trailer, Genres } from '../../models/movie.interface';
 import { DisneyService } from '../../services/disney.service';
 
 @Component({

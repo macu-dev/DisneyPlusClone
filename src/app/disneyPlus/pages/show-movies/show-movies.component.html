@@ -12,7 +12,7 @@
       <header class="w-100 d-flex flex-wrap align-content-center container  title-movie">
         <h1 class="title-movie text-white w-75 text-left">{{movie.title}}</h1>
         <p class="text-white text-left w-50 description-movie">{{movie.overview}}</p>
-        <div class="container w-100 d-flex">
+        <div class="container w-100 d-flex pl-0">
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
             Watch trailer
           </button>
@@ -36,12 +36,46 @@
               </div>
             </div>
           </div>
-
         </div>
       </header>
     </div>
-
-
   </section>
-
+  <section class="mt-5">
+    <div class="container">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="true">Info</a>
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active mt-4" id="info" role="tabpanel" aria-labelledby="info-tab">
+          <div class="row">
+            <div class="col-3">
+              <figure class="w-100">
+                <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="{{movie.title}}" class="w-100">
+              </figure>
+            </div>
+            <div class="col-9">
+              <div class="d-flex flex-wrap align-content-center h-100 info-movie">
+                <h2 class="w-100">{{movie.title}}</h2>
+                <p  class="w-75">{{movie.overview}}</p>
+                <p class="w-100">Release date: {{ movie.release_date | date: 'yyyy'}}</p>
+                <p>Genres: <span class="mr-2" *ngFor="let genre of movie.genres">{{genre.name}},</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <h2 class="text-white">{{movie.title}}</h2>
+            <p  class="text-white">hp;a</p>
+        </div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <h2 class="text-white">{{movie.title}}</h2>
+            <p  class="text-white">sas</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </ng-template>
