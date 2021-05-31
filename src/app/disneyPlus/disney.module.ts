@@ -18,6 +18,7 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 import SwiperCore, { Navigation, Pagination, Scrollbar } from 'swiper/core';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { MinuteAHoursPipe } from './pipe/minute-ahours.pipe';
 
 // Install modules
 SwiperCore.use([Navigation, Pagination, Scrollbar]);
@@ -39,7 +40,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     NotFoundComponent,
     BannerComponent,
     NewDisneyComponent,
-    SafeurlPipe
+    SafeurlPipe,
+    MinuteAHoursPipe
   ],
   exports: [
     HomeComponent,
@@ -50,7 +52,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SeriesComponent,
     NotFoundComponent,
     NewDisneyComponent,
-    SafeurlPipe
+    SafeurlPipe,
+    MinuteAHoursPipe
   ],
   imports: [
     CommonModule,

@@ -62,6 +62,7 @@
                 <h2 class="w-100">{{movie.title}}</h2>
                 <p  class="w-75">{{movie.overview}}</p>
                 <p class="w-100">Release date: {{ movie.release_date | date: 'yyyy'}}</p>
+                <p class="w-100">Runtime: {{movie.runtime | minuteAHours}}</p>
                 <p>Genres: <span class="mr-2" *ngFor="let genre of movie.genres">{{genre.name}},</span></p>
               </div>
             </div>
