@@ -70,11 +70,11 @@
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
-          <div class="row">
+          <div class="row mt-5">
             <div class="col-md-2 col-lg-2 col-xl-2 mb-5" *ngFor="let actor of credits;">
               <article class="actor h-100">
                 <img [src]="actor.profile_path | images" alt="{{actor.name}}" class="actor__img" [ngClass]="addClassNoImg(actor.profile_path)" />
-                <h2 class="actor__name">{{actor.name}}</h2>
+                <h2 class="actor__name text-white">{{actor.name}}</h2>
               </article>
             </div>
           </div>
