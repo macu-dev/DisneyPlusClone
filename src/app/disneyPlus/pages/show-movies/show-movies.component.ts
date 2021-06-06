@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { mergeAll, switchMap, tap } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { switchMap, tap } from 'rxjs/operators';
+import { Cast, Credits } from '../../models/cast.interface';
 import { Movie, Trailer, Genres } from '../../models/movie.interface';
 import { DisneyService } from '../../services/disney.service';
 
@@ -14,6 +14,7 @@ export class ShowMoviesComponent implements OnInit {
 
   movie!: Movie;
   trailer!: Trailer;
+  credits: Cast[] = [];
 
   constructor(private actividatedRoute: ActivatedRoute, private movieService: DisneyService) { }
 
@@ -35,11 +36,27 @@ export class ShowMoviesComponent implements OnInit {
     )  // el tap recibe el producto de este observable y el tap imprime en consola el resultado
     .subscribe(trailer => this.trailer = trailer);
 
+    this.actividatedRoute.params
+    .pipe(
+      switchMap(({id}) => this.movieService.getCastMovieId(id)), // retorna un observable
+      // tslint:disable-next-line: max-line-length
+      tap(console.log)
+    )  // el tap recibe el producto de este observable y el tap imprime en consola el resultado
+    .subscribe(({cast}) => this.credits = cast);
+
   }
 
   createURL(key: string): string {
     const url = `https://www.youtube.com/embed/${key}`;
     return url;
+  }
+
+  addClassNoImg(value: string | null): string{
+    if (value === null){
+      return 'actor__img--height';
+    }else {
+      return '';
+    }
   }
 
 }

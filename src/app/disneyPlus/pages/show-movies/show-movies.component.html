@@ -45,7 +45,7 @@
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
           <a class="nav-item nav-link active" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="true">Info</a>
-          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Cast</a>
           <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
         </div>
       </nav>
@@ -69,8 +69,15 @@
           </div>
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-          <h2 class="text-white">{{movie.title}}</h2>
-            <p  class="text-white">hp;a</p>
+
+          <div class="row">
+            <div class="col-md-2 col-lg-2 col-xl-2 mb-5" *ngFor="let actor of credits;">
+              <article class="actor h-100">
+                <img [src]="actor.profile_path | images" alt="{{actor.name}}" class="actor__img" [ngClass]="addClassNoImg(actor.profile_path)" />
+                <h2 class="actor__name">{{actor.name}}</h2>
+              </article>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
           <h2 class="text-white">{{movie.title}}</h2>

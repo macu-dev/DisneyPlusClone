@@ -9,7 +9,7 @@ export class MinuteAHoursPipe implements PipeTransform {
     if (value > 0 && value / 60 < 1) {
       return `${value} min`;
     }else {
-      return `${value / 60} Hs`;
+      return `${(value / 60).toFixed(2)} Hs`;
     }
   }
 

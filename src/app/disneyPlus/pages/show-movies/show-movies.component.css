@@ -48,3 +48,21 @@
 .info-movie {
   color: rgb(249, 249, 249);
 }
+
+
+.actor__img{
+  width: 100%;
+}
+
+
+.actor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.actor__img--height{
+  height: 382px;
+  object-fit: cover;
+}
