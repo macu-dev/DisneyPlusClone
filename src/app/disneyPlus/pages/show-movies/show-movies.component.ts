@@ -59,4 +59,14 @@ export class ShowMoviesComponent implements OnInit {
     }
   }
 
+  addClassTextOverflow(value: string): string{
+
+    if(value.length >= 16){
+      return 'text-overflow';
+    }else{
+      return '';
+    }
+
+  }
+
 }
