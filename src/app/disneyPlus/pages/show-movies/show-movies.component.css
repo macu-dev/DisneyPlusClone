@@ -98,6 +98,6 @@
 .text-overflow {
   overflow: hidden;
   white-space: nowrap;
-  width: 100px;
+  width: 100px !important;
   text-overflow: ellipsis;
 }

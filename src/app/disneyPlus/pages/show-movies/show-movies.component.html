@@ -75,8 +75,8 @@
               <article class="actor h-100">
                 <a href="" class="actor__link">
                   <img [src]="actor.profile_path | images" alt="{{actor.name}}" class="actor__img" [ngClass]="addClassNoImg(actor.profile_path)" />
-                  <h2 class="actor__name text-white" [ngClass]="addClassTextOverflow(actor.name)" title="{{actor.name}}">{{actor.name}}</h2>
-                  <p class="actor__character w-100">{{actor.character}}</p>
+                  <h2 class="actor__name text-white" [ngClass]="addClassTextOverflow(actor.name, 16)" title="{{actor.name}}">{{actor.name}}</h2>
+                  <p class="actor__character w-100" [ngClass]="addClassTextOverflow(actor.character, 20)" title="{{actor.character}}">{{actor.character}}</p>
                 </a>
               </article>
             </div>
