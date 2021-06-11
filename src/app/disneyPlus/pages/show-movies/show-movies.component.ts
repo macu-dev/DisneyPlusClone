@@ -15,6 +15,7 @@ export class ShowMoviesComponent implements OnInit {
   movie!: Movie;
   trailer!: Trailer;
   credits: Cast[] = [];
+  moviesSimiliar: Movie[] = [];
 
   constructor(private actividatedRoute: ActivatedRoute, private movieService: DisneyService) { }
 
@@ -22,17 +23,17 @@ export class ShowMoviesComponent implements OnInit {
 
     this.actividatedRoute.params
     .pipe(
-      switchMap(({id}) => this.movieService.getMovieId(id)), // retorna un observable
+      switchMap(({id}) => this.movieService.getMovieId(id)) // retorna un observable
       // tslint:disable-next-line: max-line-length
-      tap(console.log)
+      // tap(console.log)
     )  // el tap recibe el producto de este observable y el tap imprime en consola el resultado
     .subscribe(movie => this.movie = movie);
 
     this.actividatedRoute.params
     .pipe(
-      switchMap(({id}) => this.movieService.getMovieTrailer(id)), // retorna un observable
+      switchMap(({id}) => this.movieService.getMovieTrailer(id)) // retorna un observable
       // tslint:disable-next-line: max-line-length
-      tap(console.log)
+      // tap(console.log)
     )  // el tap recibe el producto de este observable y el tap imprime en consola el resultado
     .subscribe(trailer => this.trailer = trailer);
 
@@ -40,9 +41,17 @@ export class ShowMoviesComponent implements OnInit {
     .pipe(
       switchMap(({id}) => this.movieService.getCastMovieId(id)), // retorna un observable
       // tslint:disable-next-line: max-line-length
-      tap(console.log)
+      // tap(console.log)
     )  // el tap recibe el producto de este observable y el tap imprime en consola el resultado
     .subscribe(({cast}) => this.credits = cast);
+
+    this.actividatedRoute.params
+    .pipe(
+      switchMap(({id}) => this.movieService.getSimiliarMovies(id)) // retorna un observable
+      // tslint:disable-next-line: max-line-length
+      // tap(console.log)
+    )  // el tap recibe el producto de este observable y el tap imprime en consola el resultado
+    .subscribe(({results}) => this.moviesSimiliar = results );
 
   }
 

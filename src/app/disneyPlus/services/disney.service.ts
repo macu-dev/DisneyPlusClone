@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cast, Credits } from '../models/cast.interface';
-import { Movies, Trailer } from '../models/movie.interface';
+import { Movies, Trailer, Movie } from '../models/movie.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -30,9 +30,9 @@ export class DisneyService {
   }
 
 
-  getMovieId(id: string): Observable<Movies> {
+  getMovieId(id: string): Observable<Movie> {
     const url = `${this.apiUrl}/movie/${id}?${this.apiKey}`;
-    return this.http.get<Movies>(url);
+    return this.http.get<Movie>(url);
   }
 
   getMovieTrailer(id: string): Observable<Trailer> {
@@ -44,5 +44,10 @@ export class DisneyService {
   getCastMovieId(id: string): Observable<Credits> {
     const url = `${this.apiUrl}/movie/${id}/credits?${this.apiKey}`;
     return this.http.get<Credits>(url);
+  }
+
+  getSimiliarMovies(id: string): Observable<Movies> {
+    const url = `${this.apiUrl}/movie/${id}/similar?${this.apiKey}`;
+    return this.http.get<Movies>(url);
   }
 }
