@@ -85,12 +85,11 @@
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
           <div class="row">
             <div class="col-md-2 col-lg-2 col-xl-2" *ngFor="let movie of moviesSimiliar;">
-              <a href="">
-                <div>
-
+              <a href="" class="link">
+                <div class="movie-similar">
+                  <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="{{movie.title}}" class="w-100 movie-similar__img">
+                  <p class="movie-similar__title" [ngClass]="addClassTextOverflow(movie.title, 16)" title="{{movie.title}}">{{movie.title}}</p>
                 </div>
-
-                <p>{{movie.title}}</p>
               </a>
             </div>
           </div>

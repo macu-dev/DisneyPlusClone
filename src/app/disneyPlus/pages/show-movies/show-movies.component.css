@@ -55,7 +55,8 @@
 }
 
 
-.actor {
+.actor,
+.movie-similar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -67,11 +68,21 @@
   object-fit: cover;
 }
 
-.actor__name {
+.link{
+  text-decoration: none;
+}
+.actor__name,
+.movie-similar {
   font-size: 1.2rem;
   width: 100%;
   text-align: center;
   margin-top: 20px;
+}
+
+.movie-similar__title{
+  color: #fff;
+  padding-top: 10px;
+  margin-bottom: 0;
 }
 
 .actor__link {
@@ -84,10 +95,14 @@
   transition: all 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.actor__link:hover .actor__img{
+.actor__link:hover .actor__img,
+.movie-similar:hover .movie-similar__img{
   transform: scale(1.12);
 }
 
+.movie-similar__img{
+  transition: all .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 .actor__character{
   text-decoration: none;
   text-align: center;
