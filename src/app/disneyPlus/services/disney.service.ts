@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cast, Credits } from '../models/cast.interface';
 import { Movies, Trailer, Movie } from '../models/movie.interface';
+import { Person } from '../models/person.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -49,5 +50,10 @@ export class DisneyService {
   getSimiliarMovies(id: string): Observable<Movies> {
     const url = `${this.apiUrl}/movie/${id}/similar?${this.apiKey}`;
     return this.http.get<Movies>(url);
+  }
+
+  getActorBioById(id: string): Observable<Person>{
+    const url = `${this.apiUrl}/person/${id}?${this.apiKey}`;
+    return this.http.get<Person>(url);
   }
 }

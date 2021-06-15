@@ -17,6 +17,7 @@ export class ShowMoviesComponent implements OnInit {
   credits: Cast[] = [];
   moviesSimiliar: Movie[] = [];
 
+
   constructor(private actividatedRoute: ActivatedRoute, private movieService: DisneyService) { }
 
   ngOnInit(): void {
@@ -53,6 +54,7 @@ export class ShowMoviesComponent implements OnInit {
     )  // el tap recibe el producto de este observable y el tap imprime en consola el resultado
     .subscribe(({results}) => this.moviesSimiliar = results );
 
+
   }
 
   createURL(key: string): string {
@@ -70,7 +72,7 @@ export class ShowMoviesComponent implements OnInit {
 
   addClassTextOverflow(value: string | undefined, condition: number): string{
 
-    if(value && value.length >= condition){
+    if (value && value.length >= condition){
       return 'text-overflow';
     }else{
       return '';

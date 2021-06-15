@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CastComponent } from './disneyPlus/pages/cast/cast.component';
 import { HomeComponent } from './disneyPlus/pages/home/home.component';
 import { MoviesComponent } from './disneyPlus/pages/movies/movies.component';
 import { NotFoundComponent } from './disneyPlus/pages/not-found/not-found.component';
@@ -32,9 +33,13 @@ const routes: Routes = [
     component: ShowMoviesComponent
   },
   {
+    path: 'cast/:id',
+    component: CastComponent
+  },
+  {
     path: '**',
     component: NotFoundComponent
-  }
+  },
 ];
 
 @NgModule({
