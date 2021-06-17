@@ -21,6 +21,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MinuteAHoursPipe } from './pipe/minute-ahours.pipe';
 import { ImagesPipe } from './pipe/images.pipe';
 import { CastComponent } from './pages/cast/cast.component';
+import { GenderPipe } from './pipe/gender.pipe';
 
 
 // Install modules
@@ -46,7 +47,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SafeurlPipe,
     MinuteAHoursPipe,
     ImagesPipe,
-    CastComponent
+    CastComponent,
+    GenderPipe
   ],
   exports: [
     HomeComponent,

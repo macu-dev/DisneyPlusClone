@@ -1,21 +1,44 @@
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-md-3 col-lg-3 col-xl-3">
-      <article>
-        <figure>
-          <img [src]="person.profile_path | images" [alt]="person.name" class="w-100">
-        </figure>
-        <h2>Personal Information</h2>
-        <p>Known for</p>
-
-      </article>
-
+<div *ngIf="!person;else divPersonBio" class="p-0 w-100 h-100">
+  <div class="w-100 h-100 d-flex align-items-center">
+     <div class="preload p-0 w-100 d-flex justify-content-center align-items-center">
+       <img src="assets/images/logo.svg" alt="logo de disney" width="200">
     </div>
-
-    <div class="col-md-9 col-lg-9 col-xl-9">
-
-    </div>
-
-
   </div>
 </div>
+
+<ng-template #divPersonBio>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-xl-3">
+        <article>
+          <figure>
+            <img [src]="person.profile_path | images" [alt]="person.name" class="w-100">
+          </figure>
+          <h2 class="text-white mb-1">Personal Information</h2>
+          <p class="text-white mb-0">
+           <strong>Known for</strong>
+          </p>
+          <p class="text-white">{{person.known_for_department}}</p>
+          <p class="text-white">
+            <strong>Known Credits</strong>
+          </p>
+          <p class="text-white">
+            {{person.gender | gender}}
+          </p>
+          <ng-template ngFor let-item [ngForOf]="person.also_known_as">
+            <p class="text-white mb-1">{{item}}</p>
+          </ng-template>
+
+        </article>
+
+      </div>
+
+      <div class="col-md-9 col-lg-9 col-xl-9">
+
+      </div>
+
+
+    </div>
+  </div>
+</ng-template>
+
