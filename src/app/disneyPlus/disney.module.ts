@@ -22,6 +22,7 @@ import { MinuteAHoursPipe } from './pipe/minute-ahours.pipe';
 import { ImagesPipe } from './pipe/images.pipe';
 import { CastComponent } from './pages/cast/cast.component';
 import { GenderPipe } from './pipe/gender.pipe';
+import { AgePipe } from './pipe/age.pipe';
 
 
 // Install modules
@@ -48,7 +49,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MinuteAHoursPipe,
     ImagesPipe,
     CastComponent,
-    GenderPipe
+    GenderPipe,
+    AgePipe
   ],
   exports: [
     HomeComponent,

@@ -47,6 +47,11 @@ export class DisneyService {
     return this.http.get<Credits>(url);
   }
 
+  getPersonMovieId(id: string): Observable<Movies> {
+    const url = `${this.apiUrl}/person/${id}/movie_credits?${this.apiKey}`;
+    return this.http.get<Movies>(url);
+  }
+
   getSimiliarMovies(id: string): Observable<Movies> {
     const url = `${this.apiUrl}/movie/${id}/similar?${this.apiKey}`;
     return this.http.get<Movies>(url);

@@ -19,14 +19,36 @@
            <strong>Known for</strong>
           </p>
           <p class="text-white">{{person.known_for_department}}</p>
-          <p class="text-white">
-            <strong>Known Credits</strong>
+          <p class="text-white mb-0">
+            <strong>Place of Birth</strong>
+          </p>
+          <p class="text-white">{{person.place_of_birth}}</p>
+          <p class="text-white mb-0">
+            <strong>
+              Gender
+            </strong>
           </p>
           <p class="text-white">
             {{person.gender | gender}}
           </p>
-          <ng-template ngFor let-item [ngForOf]="person.also_known_as">
-            <p class="text-white mb-1">{{item}}</p>
+          <p class="text-white mb-0">
+            <strong>
+              Also know as
+            </strong>
+          </p>
+          <ng-template [ngIf]="person.also_known_as" >
+            <ng-template ngFor let-item [ngForOf]="person.also_known_as">
+              <p class="text-white mb-1">{{item}}</p>
+            </ng-template>
+          </ng-template>
+
+          <p class="text-white mb-0 mt-2">
+           <strong>Date of birth</strong>
+          </p>
+          <p class="text-white">{{person.birthday}} ( {{person.birthday | age : person.deathday}} Years old )</p>
+          <ng-template [ngIf]="person.deathday">
+            <p class="text-white mb-0">Death Day</p>
+            <p class="text-white">{{person.deathday}}</p>
           </ng-template>
 
         </article>
@@ -34,7 +56,20 @@
       </div>
 
       <div class="col-md-9 col-lg-9 col-xl-9">
+        <h1 class="text-white w-100">{{person.name}}</h1>
+        <p class="text-white">{{person.biography}}</p>
 
+        <div class="row">
+          <h2 class="text-white w-100">You may know her for...</h2>
+          <div class="col-md-2" *ngFor="let movie of credits;">
+            <a  class="link">
+              <div class="movie-similar">
+                <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="{{movie.title}}" class="w-100 movie-similar__img">
+                <p class="movie-similar__title">{{movie.title}}</p>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
 
 
